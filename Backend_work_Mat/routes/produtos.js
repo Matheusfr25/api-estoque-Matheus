@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {  // route get-produto por ID
     res.json(produto);
 });
 
-router.post('/', (req, res) => { // route POs - adiciona os produtos no registro
+router.post('/', (req, res) => { // route POS - adiciona os produtos no registro
     const { nome, descricao, preco, quantidade, categoria } = req.body;
     const produtos = lerProdutos();
     const novo = {
