@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nome": "Celular",
+    "descricao": "...",
+    "preco": 1500,
+    "quantidade": 65,
+    "categoria": "Tech"
+  },
+  {
+    "id": 2,
+    "nome": "Notebook",
+    "descricao": "...",
+    "preco": 2000,
+    "quantidade": 17,
+    "categoria": "Tech"
+  }
+]
