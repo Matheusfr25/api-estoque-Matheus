@@ -9,12 +9,12 @@ function lerProdutos(){ // Função que lê o arquivo produtos.json
     return JSON.parse(dados);
 };
 
-router.get('/', (req, res) => {  //Rota GET - todos os produtos
+router.get('/', (req, res) => {  // route get-todos os produtos
     const produtos = lerProdutos();
     res.json(produtos);
 });
 
-router.get('/:id', (req, res) => {  // Rota GET - produto por ID
+router.get('/:id', (req, res) => {  // route get-produto por ID
     const id = Number(req.params.id);
     const produtos = lerProdutos();
     const produto = produtos.find(a => a.id === id);
@@ -29,8 +29,7 @@ router.get('/:id', (req, res) => {  // Rota GET - produto por ID
     res.json(produto);
 });
 
-router.post('/', (req, res) => { //Rota POS - adicionar ao registro de produtos
-
+router.post('/', (req, res) => { // route POs - adiciona os produtos no registro
     const { nome, descricao, preco, quantidade, categoria } = req.body;
     const produtos = lerProdutos();
     const novo = {
@@ -42,7 +41,7 @@ router.post('/', (req, res) => { //Rota POS - adicionar ao registro de produtos
         categoria 
     };
 
-    //Verifica se nome e preco existem e não estão vazio
+    // verifica se nome e preço existem e se não estão vazios
     if (!nome || preco === undefined || preco === null) { 
         return res.status(400).json({ 
             erro: "Campos obrigatórios faltando", 
@@ -68,7 +67,7 @@ router.post('/', (req, res) => { //Rota POS - adicionar ao registro de produtos
     res.status(201).json(novo); //se der certo envia essa mensagem 
 });
 
-router.put(':id', (req, res) => { // Rota PUT modifica algum produto por ID
+router.put(':id', (req, res) => { // route PUT modifica algum produto por ID
     const id = Number(req.params.id);
     const { nome, descricao, preco, quantidade, categoria } = req.body;
     const produtos = lerProdutos();
@@ -87,7 +86,7 @@ router.put(':id', (req, res) => { // Rota PUT modifica algum produto por ID
     res.json(produtos[index]);
 });
 
-router.delete('/:id', (req, res) => {  //Rota DELETE deleta pelo ID
+router.delete('/:id', (req, res) => {  // route DELETE deleta pelo ID
     const id = Number(req.params.id);
     const produtos = lerProdutos().filter(a => a.id !== id);
 
