@@ -3,15 +3,15 @@
     "id": 1,
     "nome": "Celular",
     "descricao": "...",
-    "preco": 1500,
+    "preco": 2500,
     "quantidade": 65,
     "categoria": "Tech"
   },
   {
     "id": 2,
-    "nome": "Notebook",
+    "nome": "Tablet",
     "descricao": "...",
-    "preco": 2000,
+    "preco": 3000,
     "quantidade": 17,
     "categoria": "Tech"
   }
